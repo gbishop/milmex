@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: milmex - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP6C.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "c:/program files/matrox imaging/mil/include" /I "c:/program files/matlabr11/extern/include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "MILMEX_EXPORTS" /Fp"Release/milmex.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\msl\gb\proj\milmex\milmex.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSP6C.tmp" 
+Creating temporary file "C:\TEMP\RSP6D.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Release/milmex.pdb" /machine:I386 /def:".\milmex.def" /out:"Release/milmex.dll" /implib:"Release/milmex.lib" 
+.\Release\milmex.obj
+.\Release\mexversion.res
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milvhook.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milblob.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milcal.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milcode.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milcor.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milgen.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milhost.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milim.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milmeas.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milmet.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milmet2.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milmet2d.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milocr.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milpat.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milpul.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\miltiff.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milvb.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milvcap.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\milvga.lib"
+"C:\Program Files\Matrox Imaging\mil\library\winnt\msc\dll\mil.lib"
+.\matlabimports\Release\matlabimports.lib
+]
+Creating command line "link.exe @C:\TEMP\RSP6D.tmp"
+<h3>Output Window</h3>
+Compiling...
+milmex.cpp
+Linking...
+   Creating library Release/milmex.lib and object Release/milmex.exp
+Creating temporary file "C:\TEMP\RSP71.bat" with contents
+[
+@echo off
+copy Release\milmex.dll d:\msl\gb\misc\matlab\milmex.dll
+]
+Creating command line "C:\TEMP\RSP71.bat"
+install it
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+milmex.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: matlabimports - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP163.bat" with contents
+[
+@echo off
+lib "\"/DEF:"C:\Program Files\MATLABR11\extern\include\matlab.def"\"" /OUT:.\Debug\matlabimports.lib /machine:ix86
+]
+Creating command line "C:\TEMP\RSP163.bat"
+<h3>Output Window</h3>
+Performing Custom Build Step on "C:\Program Files\MATLABR11\extern\include\matlab.def"
+Microsoft (R) Library Manager Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+   Creating library .\Debug\matlabimports.lib and object .\Debug\matlabimports.exp
+
+
+
+<h3>Results</h3>
+matlabimports.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

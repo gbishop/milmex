@@ -1,0 +1,73 @@
+Instructions for building a Mex-file interface to Matrox MIL using 
+Visual Studio 6.0 C++
+Gary Bishop
+14 July 2000
+
+In your matlabr11/bin folder (c:/program files/matlabr11/bin on my 
+machine) make a new folder named "medit" and move medit.exe and 
+mfc42.dll from the bin directory into it. Add this bin/medit folder 
+to your path after the matlabr11/bin directory. This will stop the 
+older mfc42.dll from killing MIL code.
+
+Create a workspace for your milmex project. I'll call mine "milmex". 
+Make it a "Win32 Dynamic-Link Library" and ask for an empty one. 
+Copy your source file to this project. Mine is named "milmex.cpp". 
+Add it to the project.
+
+Add "mexversion.rc" to the project from the matlab411/extern/include 
+directory. Do with with "add files to project" and browse to the 
+appropriate directory.
+
+Create a "def" file for your dll. I'll call mine "milmex.def", I 
+don't think the name matters. You can just create this as a text file 
+in studio and save it as the appropriate name. The file should consist 
+of the following 2 lines:
+
+LIBRARY MILMEX.DLL
+EXPORTS mexFunction
+
+Add this milmex.def file to the project.
+
+Now create a sub-project to create the import library. To do this select 
+"File->New" and then the "Projects" tab. Change the location to the 
+directory your project is in (so this will be a subdirectory) and make 
+the "Project name" be "matlabimports". Select "Add to current workspace" 
+and click the "Dependency of" box. Select milmex (or whatever you called 
+yours). Select "Win32 Static Library" and OK. Click Finish and OK. Add 
+matlabr11/extern/include/matlab.def to this new project by selecting 
+"Add files to project", selected ".def" files, and browsing to the 
+directory. Under "Source Files" in your "matlabimports files" entry, 
+right click on "matlab.def" and select "Settings". In the "Commands" 
+edit box type the following line
+
+lib "\"/DEF:$(InputPath)\"" /OUT:$(TargetPath) /machine:ix86
+
+And in the "Outputs" edit box type
+
+$(TargetPath)
+
+Select OK.
+
+Now go back to the "milmex files" entry and make it active. Select add 
+files to project, select type ".lib", browse to the MIL library directory 
+(c:/program files/matrox imaging/mil/library/winnt/msc/dll on my machine) 
+and add all the .lib files there except msvcrt.lib. The ones I included 
+(I might not need all these) are:
+
+mil.lib, milcode.lib, milhost.lib, milmet.lib, milocr.lib, miltiff.lib,
+milvga.lib, milblob.lib,milcor.lib, milim.lib,  milmet2.lib, milpat.lib, 
+milvb.lib,  milvhook.lib, milcal.lib, milgen.lib, milmeas.lib,milmet2d.lib  
+milpul.lib, milvcap.lib
+
+Select the milmex project, right click, and select "Settings". Set 
+"Settings For" to "All Configurations". Choose the C++ tab and the 
+"Preprocessor" category. ",MATLAB_MEX_FILE" to the end of the 
+"Preprocessor Definitions" edit box. Add your matlabr11/extern/include 
+and MIL include direcotories to the "Additional include directories" 
+edit box. Mine looks like
+
+c:/program files/matrox imaging/mil/include,c:/program files/matlabr11/extern/include
+
+You should be able to build the project now. It should produce a "dll" in 
+either the "Debug" or "Release" directories. This dll should be a legal 
+mex file for matlab.
